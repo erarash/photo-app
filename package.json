@@ -1,0 +1,41 @@
+{
+  "name": "photo-app",
+  "version": "1.0.0",
+  "description": "WIP photo save for chrome",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "nodemon ./server/index.js",
+    "build": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erarash/photo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erarash/photo-app/issues"
+  },
+  "homepage": "https://github.com/erarash/photo-app#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "css-loader": "^2.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.14",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}

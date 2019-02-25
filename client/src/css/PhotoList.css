@@ -1,0 +1,6 @@
+.photoList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 0px 0px 0px 0px;
+}
