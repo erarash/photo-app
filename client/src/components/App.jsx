@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoList from "./PhotoList";
+import styles from "../css/App.css";
 
 export default class App extends React.Component {
   constructor(props) {
