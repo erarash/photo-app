@@ -5,10 +5,19 @@ let contextMenuItem = {
 };
 chrome.contextMenus.create(contextMenuItem);
 
-// chrome.storage.sync.set({img: val }) //??????????
+chrome.contextMenus.onClicked.addListener(info => {
+  //   alert(JSON.stringify(info));
+  //   let imgURL = info.srcUrl; //new img to be added
 
-chrome.contextMenus.onClicked.addListener(clickData => {
-  if (clickData.menuItemId === "savePic") {
-    chrome.storage.sync.get("pics", image => {});
-  }
+  chrome.storage.sync.get(["images"], pics => {
+    let imgArr = [];
+    if (pics.images) {
+      imgArr = pics.images;
+    }
+    imgArr.push(info.srcUrl);
+
+    chrome.storage.sync.set({ images: imgArr }, () => {
+      console.log("photo added!");
+    });
+  });
 });
