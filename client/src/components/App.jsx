@@ -22,13 +22,16 @@ export default class App extends React.Component {
   deletePic(e) {
     //e.target.src === img url
     e.persist();
-    let toRemove = [];
-    chrome.storage.sync.get(null, function(data) {
-      for (let i = 0; i < data.images.length; i++) {
-        if (data.images[i] === e.target.src) {
-          toRemove.push(i);
-        }
+    for (let i = 0; i < this.state.photos.length; i++) {
+      if (this.state.photos[i] === e.target.src) {
+        this.state.photos.splice(i, 1);
+        this.setState({
+          photos: this.state.photos
+        });
       }
+    }
+    chrome.storage.sync.set({ images: this.state.photos }, () => {
+      console.log("updated");
     });
   }
 
