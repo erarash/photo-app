@@ -8,7 +8,7 @@ export default function PhotoList(props) {
       <ul className={styles.photoList}>
         {props.photos.map(photo => (
           <li key={photo.index}>
-            <PhotoListEntry photo={photo} />
+            <PhotoListEntry photo={photo} delete={props.delete} />
           </li>
         ))}
       </ul>

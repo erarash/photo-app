@@ -8,6 +8,7 @@ export default class App extends React.Component {
     this.state = {
       photos: []
     };
+    this.deletePic = this.deletePic.bind(this);
   }
 
   componentDidMount() {
@@ -18,11 +19,24 @@ export default class App extends React.Component {
     });
   }
 
+  deletePic(e) {
+    //e.target.src === img url
+    e.persist();
+    let toRemove = [];
+    chrome.storage.sync.get(null, function(data) {
+      for (let i = 0; i < data.images.length; i++) {
+        if (data.images[i] === e.target.src) {
+          toRemove.push(i);
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <div>
         <h1> Your Photos! </h1>
-        <PhotoList photos={this.state.photos} />
+        <PhotoList photos={this.state.photos} delete={this.deletePic} />
       </div>
     );
   }

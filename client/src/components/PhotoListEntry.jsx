@@ -3,7 +3,7 @@ import styles from "../css/PhotoListEntry.css";
 
 export default function PhotoListEntry(props) {
   return (
-    <div>
+    <div onClick={e => props.delete(e)}>
       <img
         id="picture"
         className={styles.box}
