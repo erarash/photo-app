@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   deletePic(e) {
-    //e.target.src === img url
+    //e.target.src = img url
     e.persist();
     for (let i = 0; i < this.state.photos.length; i++) {
       if (this.state.photos[i] === e.target.src) {
@@ -36,11 +36,19 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1> Your Photos! </h1>
-        <PhotoList photos={this.state.photos} delete={this.deletePic} />
-      </div>
-    );
+    if (!this.state.photos) {
+      return (
+        <div className={styles.welcomeMessage}>
+          <h1>ADD SOME PHOTOS!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1 className={styles.welcomeMessage}> Your Photos! </h1>
+          <PhotoList photos={this.state.photos} delete={this.deletePic} />
+        </div>
+      );
+    }
   }
 }

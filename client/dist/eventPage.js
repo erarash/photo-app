@@ -1,14 +1,11 @@
 let contextMenuItem = {
   id: "savePic",
-  title: "SavePic",
+  title: "Save Picture!",
   contexts: ["image"]
 };
 chrome.contextMenus.create(contextMenuItem);
 
 chrome.contextMenus.onClicked.addListener(info => {
-  //   alert(JSON.stringify(info));
-  //   let imgURL = info.srcUrl; //new img to be added
-
   chrome.storage.sync.get(["images"], pics => {
     let imgArr = [];
     if (pics.images) {

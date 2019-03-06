@@ -1,5 +1,5 @@
 {
-  "name": "PhotoApp",
+  "name": "ImgKeep",
   "version": "1.0",
   "description": "save your online Photos",
   "permissions": ["storage", "contextMenus", "<all_urls>"],
@@ -7,7 +7,7 @@
     "default_popup": "index.html"
   },
   "background": {
-    "scripts": ["bundle.js", "eventPage.js", "background.js"],
+    "scripts": ["bundle.js", "eventPage.js"],
     "persistent": false
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
