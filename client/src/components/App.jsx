@@ -36,7 +36,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (!this.state.photos) {
+    if (!this.state.photos || this.state.photos.length === 0) {
       return (
         <div className={styles.welcomeMessage}>
           <h1>ADD SOME PHOTOS!</h1>
