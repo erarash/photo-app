@@ -20,7 +20,6 @@ export default class App extends React.Component {
   }
 
   deletePic(e) {
-    //e.target.src = img url
     e.persist();
     for (let i = 0; i < this.state.photos.length; i++) {
       if (this.state.photos[i] === e.target.src) {
